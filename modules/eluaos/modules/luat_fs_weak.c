@@ -1,4 +1,4 @@
-
+#include "../../../sdk/bl_iot_sdk/components/fs/vfs/include/vfs.h"  ////  For aos_access
 #include "luat_fs.h"
 #define LUAT_LOG_TAG "luat.fs"
 #include "luat_log.h"

@@ -1,3 +1,4 @@
+#include "../../../sdk/bl_iot_sdk/components/fs/vfs/include/vfs.h"  ////  For aos_read
 #include "luat_base.h"
 #include "luat_malloc.h"
 #include "luat_msgbus.h"
@@ -32,7 +33,7 @@ int luat_console_setup(int port) {
 
 int luat_uart_setup(luat_uart_t* uart)
 {
-    
+    return 0;  ////
 }
 
 int luat_uart_write(int uartid, void* data, size_t length)
