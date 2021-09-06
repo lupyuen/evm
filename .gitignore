@@ -26,8 +26,6 @@ release
 build*
 distwin/
 build/
-.vscode/
-.vscode*
 .settings/
 .autotools
 .vscode-ctags
