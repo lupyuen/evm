@@ -166,7 +166,7 @@ wlan.autoreconnect()
 wlan.autoreconnect(1)
 */
 static int l_wlan_autoreconnect(lua_State *L) {
-    static autoconnect = 0;
+    static int autoconnect = 0;  ////
     if (lua_gettop(L) > 0) {
         if( luaL_checkinteger(L, 1) ) {
             wifi_mgmr_sta_autoconnect_enable();

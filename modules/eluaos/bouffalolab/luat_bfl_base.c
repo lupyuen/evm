@@ -1,3 +1,4 @@
+#include <ecma.h>  ////  For ecma_module
 #include <errno.h>
 #include <vfs.h>
 #include <aos/kernel.h>
