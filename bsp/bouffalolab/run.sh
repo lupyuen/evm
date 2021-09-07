@@ -19,8 +19,23 @@ export BLFLASH_PATH=$PWD/../../../blflash
 #  Where GCC is located
 #  export GCC_PATH=$PWD/../../../xpack-riscv-none-embed-gcc
 
+#  Remove the firmware file
+if [ -f build_out/$APP_NAME.bin ]
+then
+    rm build_out/$APP_NAME.bin
+fi
+
 #  Build the firmware
-./genromap
+./genromap || echo "Checking build for error..."
+
+#  Fail if the firmware file doesn't exist
+if [ -f build_out/$APP_NAME.bin ]
+then
+    echo "Build OK"
+else 
+    echo "Build failed"
+    exit 1
+fi
 
 #  Generate the disassembly
 # $GCC_PATH/bin/riscv-none-embed-objdump \
