@@ -1,4 +1,4 @@
-#include "evm_module.h"
+#include <evm_module/evm_module.h>
 
 static evm_hash_t _name_arguments;
 static char * _cwd = "";

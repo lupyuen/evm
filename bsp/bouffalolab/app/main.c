@@ -169,8 +169,16 @@ static void evm_task_proc(void *pvParameters)
     }
 
     printf("=================================================================evm main starts\r\n");
+#define USE_EVM
+#ifdef USE_EVM
+    //  Updated: Start EVM
+    int evm_main();
+    evm_main();
+#else
+    //  Previously: Start Lua
     luat_log_set_uart_port(0);
     luat_main();
+#endif  //  USE_EVM
 
     while (1)
     {
