@@ -7,10 +7,13 @@
             "label": "Build",
             "type": "shell",
             "command": "cd bsp/bouffalolab && ./genromap",
-            "problemMatcher": [],
+            "problemMatcher": "$gcc",
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "clear": true
             }
         }
     ]

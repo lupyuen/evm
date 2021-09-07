@@ -39,7 +39,7 @@ static int l_wlan_get_mode(lua_State *L) {
             }
         }
     }
-    int mode;// = rt_wlan_get_mode(devname);
+    int mode = 0; //// TODO rt_wlan_get_mode(devname);
     lua_pushinteger(L, mode);
     return 1;
 }
@@ -67,7 +67,7 @@ static int l_wlan_set_mode(lua_State *L) {
         }
     }
     int mode = luaL_checkinteger(L, 2);
-    int re;// = rt_wlan_set_mode(devname, mode);
+    int re = 0; //// TODO rt_wlan_set_mode(devname, mode);
     lua_pushinteger(L, re);
     return 1;
 }
@@ -289,7 +289,7 @@ static int l_wlan_get_mac(lua_State *L) {
     mac[0] = 0x00;
     wifi_mgmr_sta_mac_get(mac);
     if (mac[0] != 0x00) {
-        sprintf(buff, 14, "%02X%02X%02X%02X%02X%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+        snprintf(buff, 14, "%02X%02X%02X%02X%02X%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);  ////
         lua_pushlstring(L, buff, 12);
         return 1;
     }
@@ -312,7 +312,7 @@ static int l_wlan_get_mac_raw(lua_State *L) {
     mac[0] = 0x00;
     wifi_mgmr_sta_mac_get(mac);
     if (mac[0] != 0x00) {
-        lua_pushlstring(L, mac, 6);
+        lua_pushlstring(L, (const char *) mac, 6); //// TODO
         return 1;
     }
     return 0;
