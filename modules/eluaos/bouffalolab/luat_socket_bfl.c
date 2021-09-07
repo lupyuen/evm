@@ -7,13 +7,14 @@
 #include <lwip/netdb.h>
 #include <lwip/tcp.h>
 #include <lwip/err.h>
+#include <wifi_mgmr_ext.h> ////
 
 int luat_socket_tsend(const char* hostname, int port, void* buff, int len)
 {
-    int ret, i;
+    int ret; //// i
     // char *recv_data;
     struct hostent *host;
-    int sock = -1, bytes_received;
+    int sock = -1; //// bytes_received
     struct sockaddr_in server_addr;
 
     // 强制GC一次先

@@ -11,7 +11,10 @@
 #include <wifi_mgmr_ext.h>
 #include <bl_wifi.h>
 #include <hal_wifi.h>
+#include <hal_sys.h> ////
 #include <aos/yloop.h>
+#include <aos/kernel.h> ////
+#include <FreeRTOS.h> ////
 
 /*
 获取wifi模式
