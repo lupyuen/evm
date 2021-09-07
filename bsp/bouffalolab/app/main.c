@@ -169,7 +169,7 @@ static void evm_task_proc(void *pvParameters)
     }
 
     printf("=================================================================evm main starts\r\n");
-#define USE_EVM
+//// TODO: #define USE_EVM
 #ifdef USE_EVM
     //  Updated: Start EVM
     int evm_main();
